@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B5E56312C874AE40097D855 /* AddScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5E56302C874AE40097D855 /* AddScreen.swift */; };
 		7BDD0E792C6E72DE002C068E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD0E782C6E72DE002C068E /* AppDelegate.swift */; };
 		7BDD0E7B2C6E72DE002C068E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD0E7A2C6E72DE002C068E /* SceneDelegate.swift */; };
 		7BDD0E7D2C6E72DE002C068E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD0E7C2C6E72DE002C068E /* ViewController.swift */; };
@@ -16,6 +17,17 @@
 		7BDD0E902C6E72E1002C068E /* Remember_To_RememberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD0E8F2C6E72E1002C068E /* Remember_To_RememberTests.swift */; };
 		7BDD0E9A2C6E72E1002C068E /* Remember_To_RememberUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD0E992C6E72E1002C068E /* Remember_To_RememberUITests.swift */; };
 		7BDD0E9C2C6E72E1002C068E /* Remember_To_RememberUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD0E9B2C6E72E1002C068E /* Remember_To_RememberUITestsLaunchTests.swift */; };
+		7BDD0EC02C6E85AE002C068E /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD0EAE2C6E85AE002C068E /* CalendarView.swift */; };
+		7BDD0EC12C6E85AE002C068E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD0EAF2C6E85AE002C068E /* ContentView.swift */; };
+		7BDD0EC22C6E85AE002C068E /* DatePickerCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD0EB02C6E85AE002C068E /* DatePickerCalendar.swift */; };
+		7BDD0EC32C6E85AE002C068E /* FormattedDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD0EB12C6E85AE002C068E /* FormattedDate.swift */; };
+		7BDD0EC52C6E85AE002C068E /* final-output.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7BDD0EB42C6E85AE002C068E /* final-output.gif */; };
+		7BDD0EC62C6E85AE002C068E /* output-3 (1).gif in Resources */ = {isa = PBXBuildFile; fileRef = 7BDD0EB52C6E85AE002C068E /* output-3 (1).gif */; };
+		7BDD0EC72C6E85AE002C068E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7BDD0EB62C6E85AE002C068E /* README.md */; };
+		7BDD0ECA2C6E8799002C068E /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 7BDD0EC92C6E8799002C068E /* FSCalendar */; };
+		7BDD0ED22C713773002C068E /* ReminderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD0ED02C713773002C068E /* ReminderCell.swift */; };
+		7BDD0ED32C713773002C068E /* ReminderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BDD0ED12C713773002C068E /* ReminderCell.xib */; };
+		7BDD0ED62C714D3A002C068E /* Reminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD0ED52C714D3A002C068E /* Reminders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,9 +45,17 @@
 			remoteGlobalIDString = 7BDD0E742C6E72DE002C068E;
 			remoteInfo = "Remember To Remember";
 		};
+		7BDD0EBC2C6E85AE002C068E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BDD0EB72C6E85AE002C068E /* WorkingWIthCalendars.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 17BE17EE28CCE99000BD7BF9;
+			remoteInfo = WorkingWIthCalendars;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B5E56302C874AE40097D855 /* AddScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScreen.swift; sourceTree = "<group>"; };
 		7BDD0E752C6E72DE002C068E /* Remember To Remember.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Remember To Remember.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BDD0E782C6E72DE002C068E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BDD0E7A2C6E72DE002C068E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +69,18 @@
 		7BDD0E952C6E72E1002C068E /* Remember To RememberUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Remember To RememberUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BDD0E992C6E72E1002C068E /* Remember_To_RememberUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remember_To_RememberUITests.swift; sourceTree = "<group>"; };
 		7BDD0E9B2C6E72E1002C068E /* Remember_To_RememberUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remember_To_RememberUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7BDD0EAE2C6E85AE002C068E /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		7BDD0EAF2C6E85AE002C068E /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7BDD0EB02C6E85AE002C068E /* DatePickerCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerCalendar.swift; sourceTree = "<group>"; };
+		7BDD0EB12C6E85AE002C068E /* FormattedDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormattedDate.swift; sourceTree = "<group>"; };
+		7BDD0EB22C6E85AE002C068E /* WorkingWIthCalendarsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingWIthCalendarsApp.swift; sourceTree = "<group>"; };
+		7BDD0EB42C6E85AE002C068E /* final-output.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "final-output.gif"; sourceTree = "<group>"; };
+		7BDD0EB52C6E85AE002C068E /* output-3 (1).gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "output-3 (1).gif"; sourceTree = "<group>"; };
+		7BDD0EB62C6E85AE002C068E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7BDD0EB72C6E85AE002C068E /* WorkingWIthCalendars.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = WorkingWIthCalendars.xcodeproj; sourceTree = "<group>"; };
+		7BDD0ED02C713773002C068E /* ReminderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCell.swift; sourceTree = "<group>"; };
+		7BDD0ED12C713773002C068E /* ReminderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderCell.xib; sourceTree = "<group>"; };
+		7BDD0ED52C714D3A002C068E /* Reminders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminders.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BDD0ECA2C6E8799002C068E /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,13 +132,16 @@
 		7BDD0E772C6E72DE002C068E /* Remember To Remember */ = {
 			isa = PBXGroup;
 			children = (
+				7BDD0ED42C714D24002C068E /* Models */,
+				7BDD0ECF2C713726002C068E /* View */,
+				7BDD0EB82C6E85AE002C068E /* SwiftUICalendars */,
 				7BDD0E782C6E72DE002C068E /* AppDelegate.swift */,
 				7BDD0E7A2C6E72DE002C068E /* SceneDelegate.swift */,
 				7BDD0E7C2C6E72DE002C068E /* ViewController.swift */,
-				7BDD0E7E2C6E72DE002C068E /* Main.storyboard */,
 				7BDD0E812C6E72E1002C068E /* Assets.xcassets */,
 				7BDD0E832C6E72E1002C068E /* LaunchScreen.storyboard */,
 				7BDD0E862C6E72E1002C068E /* Info.plist */,
+				7B5E56302C874AE40097D855 /* AddScreen.swift */,
 			);
 			path = "Remember To Remember";
 			sourceTree = "<group>";
@@ -127,6 +163,64 @@
 			path = "Remember To RememberUITests";
 			sourceTree = "<group>";
 		};
+		7BDD0EAC2C6E85AE002C068E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7BDD0EB32C6E85AE002C068E /* WorkingWIthCalendars */ = {
+			isa = PBXGroup;
+			children = (
+				7BDD0EAC2C6E85AE002C068E /* Preview Content */,
+				7BDD0EAE2C6E85AE002C068E /* CalendarView.swift */,
+				7BDD0EAF2C6E85AE002C068E /* ContentView.swift */,
+				7BDD0EB02C6E85AE002C068E /* DatePickerCalendar.swift */,
+				7BDD0EB12C6E85AE002C068E /* FormattedDate.swift */,
+				7BDD0EB22C6E85AE002C068E /* WorkingWIthCalendarsApp.swift */,
+			);
+			path = WorkingWIthCalendars;
+			sourceTree = "<group>";
+		};
+		7BDD0EB82C6E85AE002C068E /* SwiftUICalendars */ = {
+			isa = PBXGroup;
+			children = (
+				7BDD0EB32C6E85AE002C068E /* WorkingWIthCalendars */,
+				7BDD0EB42C6E85AE002C068E /* final-output.gif */,
+				7BDD0EB52C6E85AE002C068E /* output-3 (1).gif */,
+				7BDD0EB62C6E85AE002C068E /* README.md */,
+				7BDD0EB72C6E85AE002C068E /* WorkingWIthCalendars.xcodeproj */,
+			);
+			path = SwiftUICalendars;
+			sourceTree = "<group>";
+		};
+		7BDD0EB92C6E85AE002C068E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7BDD0EBD2C6E85AE002C068E /* WorkingWIthCalendars.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7BDD0ECF2C713726002C068E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7BDD0E7E2C6E72DE002C068E /* Main.storyboard */,
+				7BDD0ED02C713773002C068E /* ReminderCell.swift */,
+				7BDD0ED12C713773002C068E /* ReminderCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7BDD0ED42C714D24002C068E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7BDD0ED52C714D3A002C068E /* Reminders.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +237,9 @@
 			dependencies = (
 			);
 			name = "Remember To Remember";
+			packageProductDependencies = (
+				7BDD0EC92C6E8799002C068E /* FSCalendar */,
+			);
 			productName = "Remember To Remember";
 			productReference = 7BDD0E752C6E72DE002C068E /* Remember To Remember.app */;
 			productType = "com.apple.product-type.application";
@@ -215,8 +312,17 @@
 				Base,
 			);
 			mainGroup = 7BDD0E6C2C6E72DE002C068E;
+			packageReferences = (
+				7BDD0EC82C6E8799002C068E /* XCRemoteSwiftPackageReference "FSCalendar" */,
+			);
 			productRefGroup = 7BDD0E762C6E72DE002C068E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7BDD0EB92C6E85AE002C068E /* Products */;
+					ProjectRef = 7BDD0EB72C6E85AE002C068E /* WorkingWIthCalendars.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				7BDD0E742C6E72DE002C068E /* Remember To Remember */,
@@ -226,14 +332,28 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		7BDD0EBD2C6E85AE002C068E /* WorkingWIthCalendars.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = WorkingWIthCalendars.app;
+			remoteRef = 7BDD0EBC2C6E85AE002C068E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		7BDD0E732C6E72DE002C068E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BDD0EC52C6E85AE002C068E /* final-output.gif in Resources */,
 				7BDD0E822C6E72E1002C068E /* Assets.xcassets in Resources */,
+				7BDD0ED32C713773002C068E /* ReminderCell.xib in Resources */,
+				7BDD0EC62C6E85AE002C068E /* output-3 (1).gif in Resources */,
 				7BDD0E852C6E72E1002C068E /* Base in Resources */,
 				7BDD0E802C6E72DE002C068E /* Base in Resources */,
+				7BDD0EC72C6E85AE002C068E /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +379,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BDD0E7D2C6E72DE002C068E /* ViewController.swift in Sources */,
+				7BDD0EC12C6E85AE002C068E /* ContentView.swift in Sources */,
 				7BDD0E792C6E72DE002C068E /* AppDelegate.swift in Sources */,
+				7B5E56312C874AE40097D855 /* AddScreen.swift in Sources */,
+				7BDD0ED62C714D3A002C068E /* Reminders.swift in Sources */,
+				7BDD0ED22C713773002C068E /* ReminderCell.swift in Sources */,
+				7BDD0EC02C6E85AE002C068E /* CalendarView.swift in Sources */,
 				7BDD0E7B2C6E72DE002C068E /* SceneDelegate.swift in Sources */,
+				7BDD0EC32C6E85AE002C068E /* FormattedDate.swift in Sources */,
+				7BDD0EC22C6E85AE002C068E /* DatePickerCalendar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +495,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -425,7 +552,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -450,6 +577,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,6 +585,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.danirock.Remember-To-Remember";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -478,6 +610,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -485,6 +618,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.danirock.Remember-To-Remember";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -500,7 +637,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GDM32PR97X;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.danirock.Remember-To-RememberTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -520,7 +657,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GDM32PR97X;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.danirock.Remember-To-RememberTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -607,6 +744,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7BDD0EC82C6E8799002C068E /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7BDD0EC92C6E8799002C068E /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7BDD0EC82C6E8799002C068E /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7BDD0E6D2C6E72DE002C068E /* Project object */;
 }

@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Reminders {
+    let header: String
+    let body: String
+}
