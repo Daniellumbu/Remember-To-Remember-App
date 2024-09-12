@@ -8,14 +8,15 @@
 import UIKit
 import SwiftUI
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController, AddScreenViewControllerDelegate {
     @IBOutlet weak var tableView: UITableView!
-    var remindersArray: [Reminders] = []
+    var remindersArray: [Reminders] = [Reminders(header: "yeah", body: "whow")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.register(UINib(nibName:  "ReminderCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
+        
  
 
     }
@@ -30,28 +31,31 @@ class ViewController: UIViewController {
         view.addSubview(hostingController.view)
         hostingController.didMove(toParent: self)  // hosting swiftui in Uikit
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "AddScreen"){
+            let destination = segue.destination as! AddScreenViewController
+            destination.delegate = self
+            destination.remindersArrayAddScreen = remindersArray
+        }
+    }
 
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
-        var textField = UITextField()
-        let alert = UIAlertController(title: "Add New Todoey Item", message: " ",preferredStyle: .alert)
-        
-        let action = UIAlertAction(title: "Add Item", style: .default){ (action) in
-            self.remindersArray.append(Reminders(header: textField.text!, body: "TBD"))
-            self.tableView.reloadData()
+        self.performSegue(withIdentifier: "AddScreen", sender: self)
             
-        }
-        
-        alert.addTextField{(alertTextField) in alertTextField.placeholder = "Create New Item"
-            textField = alertTextField
-        }
-        alert.addAction(action)
-        
-        present(alert,animated: true, completion: nil)
     }
-    
+    func didDismissWithAction() {
+        self.tableView.reloadData()
+        
+          // Your code here
+      }
+    func didDismissWithData(data:[Reminders]) {
+        remindersArray = data
+     }
+
 }
 
-extension ViewController:UITableViewDataSource{
+
+extension MainViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return remindersArray.count
     }
