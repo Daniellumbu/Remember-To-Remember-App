@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import Combine
 
 
 protocol AddScreenViewControllerDelegate: AnyObject {
@@ -15,7 +16,12 @@ protocol AddScreenViewControllerDelegate: AnyObject {
 }
 
 class AddScreenViewController: UIViewController {
+    var cancellable: AnyCancellable?
+    @Published var selectedDate = Date()
+    @IBOutlet weak var titleText: UILabel!
+    @IBOutlet weak var timeButton1: UIButton!
     @IBOutlet weak var switchButton: UISwitch!
+    @IBOutlet weak var timeButton2: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     var remindersArrayAddScreen: [Reminders] = []
     weak var delegate: AddScreenViewControllerDelegate?
@@ -28,7 +34,9 @@ class AddScreenViewController: UIViewController {
     @IBOutlet weak var startDateButton: UIButton!
     @IBOutlet weak var endDateButton: UIButton!
     @IBOutlet weak var dateButton: UIButton!
+    @IBOutlet weak var timeTextLabel: UILabel!
     var subViewHostingController: UIHostingController<DatePickerGrid>?
+    var hostingController: UIHostingController<FormattedDate>?
     let scrollView = UIScrollView()
     let contentView = UIView()
     
@@ -40,79 +48,27 @@ class AddScreenViewController: UIViewController {
         titleTextBar.delegate = self
         detailsTextbar.delegate = self
         setupUI()
-        
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(scrollView)
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.addSubview(contentView)
 
-        view.addSubview(scrollView)
-        scrollView.addSubview(contentView)
-        
-        // Constraints for scrollView
-        NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-        
-        // Constraints for contentView inside scrollView
-        // Constraints for contentView inside scrollView
-        NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            
-            // This is important to define the content size
-            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            contentView.heightAnchor.constraint(equalToConstant: 1000)// Set a larger height to make it scrollable
-        ])
-        contentView.heightAnchor.constraint(equalToConstant: 1000).isActive = true
-        scrollView.isScrollEnabled = true
-        scrollView.showsVerticalScrollIndicator = true
-        scrollView.showsHorizontalScrollIndicator = false
-        scrollView.bounces = true
-        scrollView.isUserInteractionEnabled = true
-        scrollView.delaysContentTouches = false
-        scrollView.canCancelContentTouches = true
-        view.bringSubviewToFront(titleTextBar)
-        view.bringSubviewToFront(detailsTextbar)
-        view.bringSubviewToFront(saveButton)
-        view.bringSubviewToFront(switchButton)
-
-
-        
-        // Do any additional setup after loading the view.
     }
     
-    override func viewDidLayoutSubviews() {
-        let swiftUIView = FormattedDate(selectedDate: Date())
-        let hostingController = UIHostingController(rootView: swiftUIView)
-        
-        addChild(hostingController)
-        let labelPosition = dateLabel.frame.origin
-        let calenderLocation = CGRect(x:labelPosition.x, y: labelPosition.y, width: view.frame.size.width/3, height: 50)
-        hostingController.view.frame = calenderLocation
-        view.addSubview(hostingController.view)
-        hostingController.didMove(toParent: self)  // hosting swiftui in Uikit
-    }
+    
+    
+
     
     @IBAction func dateButtonPressed(_ sender: UIButton) {
+        print(selectedDate)
+        timeButton2.isHidden = !timeButton2.isHidden
+        timeButton1.isHidden = !timeButton1.isHidden
         if let subView = subViewHostingController?.view {
             UIView.animate(withDuration: 0.3, animations: {
                 subView.isHidden = !subView.isHidden
+                
                 
             })
         }
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        //        if textFieldShouldEndEditing(<#UITextField#>) == false {
-        //            return
-        //        }
-        
         self.remindersArrayAddScreen.append(Reminders(header: titleTextBar.text!, body: detailsTextbar.text!))
         delegate?.didDismissWithData(data: remindersArrayAddScreen)
         delegate?.didDismissWithAction()
@@ -129,11 +85,27 @@ class AddScreenViewController: UIViewController {
         })
     }
     
+    private func setupScrollview() {
+        view.bringSubviewToFront(titleTextBar)
+        view.bringSubviewToFront(detailsTextbar)
+        view.bringSubviewToFront(saveButton)
+        view.bringSubviewToFront(switchButton)
+        view.bringSubviewToFront(dateButton)
+    }
+        
     func setupUI() {
         startDateButton.isHidden = true
         endDateButton.isHidden = true
+        timeButton2.isHidden = true
         // Initialize the SwiftUI SubView
-        let gridCalenderView = DatePickerGrid()
+        // Create the binding for selectedDate
+        let gridCalenderView = DatePickerGrid(selectedDate: Binding(
+            get: { self.selectedDate },  // Get from UIKit's selectedDate
+            set: { newDate in             // Set from SwiftUI changes
+                self.selectedDate = newDate
+                self.timeTextLabel.text = newDate.formatted()
+            }
+        ))
         
         // Embed the SwiftUI view in a UIHostingController
         subViewHostingController = UIHostingController(rootView: gridCalenderView)
@@ -146,7 +118,7 @@ class AddScreenViewController: UIViewController {
             // Set up constraints for the SwiftUI subview
             NSLayoutConstraint.activate([
                 subView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                subView.topAnchor.constraint(equalTo: startDateButton.bottomAnchor, constant: 20),
+                subView.topAnchor.constraint(equalTo: dateButton.bottomAnchor, constant: 5),
                 subView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
             ])
             
@@ -155,6 +127,30 @@ class AddScreenViewController: UIViewController {
         }
         // Initially hide the start and end date labels
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+            // Check if the hostingController is already created and added to the view
+            if hostingController == nil {
+                var swiftUIView = FormattedDate(selectedDate: selectedDate)
+                let labelPosition = timeTextLabel.frame.origin
+                let calenderLocation = CGRect(x: labelPosition.x, y: labelPosition.y + 430, width: view.frame.size.width / 2, height: 45)
+                cancellable = $selectedDate.sink { newValue in
+                    print("yes just once \(newValue)")
+                    swiftUIView = FormattedDate(selectedDate: newValue,backgroundColor: .clear)
+                    self.hostingController = UIHostingController(rootView: swiftUIView)
+                    
+                    guard let hostingController = self.hostingController else { return }
+                    
+                    self.addChild(hostingController)
+
+                    hostingController.view.frame = calenderLocation
+                    self.view.addSubview(hostingController.view)
+                    hostingController.didMove(toParent: self)
+                     // Do something when myVariable changes
+                 }
+    
+        }
     }
     
 }
